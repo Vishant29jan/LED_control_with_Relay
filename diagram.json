@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "Vishant Singh",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 67.8, "left": 37.8, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -51.6,
+      "left": 339.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 63.8,
+      "left": -86.4,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -38.2, "left": -9.6, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 23.15,
+      "left": 230.4,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "btn1:1.l", "uno:2", "blue", [ "h0", "v-28.8", "h393.6", "v9.6" ] ],
+    [ "btn1:2.l", "uno:GND.2", "black", [ "h0", "v182.6", "h297.6" ] ],
+    [ "relay1:IN", "uno:7", "blue", [ "h0", "v38.2", "h0", "v0", "h240" ] ],
+    [ "relay1:GND", "uno:GND.3", "black", [ "h-48", "h-48", "v345.6", "h322.4" ] ],
+    [ "relay1:VCC", "uno:5V", "red", [ "h-9.6", "v288", "h211.2" ] ],
+    [
+      "relay1:COM",
+      "uno:5V",
+      "red",
+      [ "h154.8", "v-59", "h124.8", "v355.2", "h0", "v9.6", "h-192", "v9.6" ]
+    ],
+    [ "led1:A", "r1:2", "red", [ "v38.4", "h0" ] ],
+    [ "relay1:NO", "r1:1", "red", [ "h58.8", "v17.4", "h0", "v0", "h67.2" ] ],
+    [ "led1:C", "uno:GND.3", "black", [ "v297.6", "h-134" ] ]
+  ],
+  "dependencies": {}
+}
